@@ -1,13 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from app import app
+from main import app
 from text_transform import cleanup_text, cleanup_en_text, cleanup_chapter_title, cleanup_en_chapter_title
 import json
 
 
 db = SQLAlchemy(app)
-
-with app.app_context():
-    db.reflect()
+db.reflect()
 
 
 def is_number(s):

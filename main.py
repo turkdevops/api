@@ -1,11 +1,9 @@
 import functools
-from flask import Flask, jsonify, request, abort
+from flask import jsonify, request, abort
 from sqlalchemy import func, or_
 from werkzeug.exceptions import HTTPException
 
-app = Flask(__name__)
-app.config.from_object("config.Config")
-
+from app import app
 from models import HadithCollection, Book, Chapter, Hadith
 
 
